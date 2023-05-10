@@ -2,8 +2,10 @@ import './globals.css';
 // import './components/basic/navbar.module.css'
 import { Inter } from 'next/font/google'
 import Header from "./components/basic/header";
+import Banner from './components/basic/Banner';
+import Searchbar from './components/basic/Searchbar';
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
     title: 'Index',
@@ -18,9 +20,17 @@ export default function RootLayout({
     return (
         <html lang="pt-br">
             <head />
-            <body className={inter.className}>
+            
+            <body className={`
+                bg-gray-200
+            `}>
                 <Header />
-                {children}
+                <Banner />
+                <main className={`
+                    w-full max-w-3xl mx-auto
+                `}>
+                    {children}
+                </main>
             </body>
         </html>
     )
